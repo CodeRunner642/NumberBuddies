@@ -23,11 +23,11 @@ export default function QuestionCard({
       </div>
 
       <div className="question-display">
-        <span className="question-num">{question.a}</span>
-        <span className="question-op">{question.operation}</span>
-        <span className="question-num">{question.b}</span>
-        <span className="question-op">=</span>
-        <span className="question-unknown">?</span>
+        <div className="question-num">{question.a}</div>
+        <div className="question-op">{question.operation}</div>
+        <div className="question-num">{question.b}</div>
+        <div className="question-equals">=</div>
+        <div className="question-unknown">?</div>
       </div>
 
       {feedback !== null && <FeedbackMessage isCorrect={feedback} />}
