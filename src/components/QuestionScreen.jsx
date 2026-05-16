@@ -7,9 +7,9 @@ import FeedbackMessage from './FeedbackMessage';
 import { playCorrect, playIncorrect, playTap } from '../utils/sound';
 
 const LEVEL_LABELS = {
-  beginner: '🌱 Beginner',
-  explorer: '🌟 Explorer',
-  star:     '🚀 Star',
+  beginner: '🌱 Easy',
+  explorer: '🌟 Medium',
+  star:     '🚀 Hard',
 };
 
 export default function QuestionScreen({

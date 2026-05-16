@@ -2,9 +2,9 @@ import Mascot from './Mascot';
 import StarTracker from './StarTracker';
 
 const LEVEL_LABELS = {
-  beginner: '🌱 Beginner',
-  explorer: '🌟 Explorer',
-  star:     '🚀 Star',
+  beginner: '🌱 Easy',
+  explorer: '🌟 Medium',
+  star:     '🚀 Hard',
 };
 
 export default function SummaryScreen({ stars, correct, total, level, onPlayAgain, onNewLevel }) {
