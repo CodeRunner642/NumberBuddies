@@ -1,4 +1,6 @@
-const CORRECT_MESSAGES = [
+import { useState } from 'react';
+
+const CORRECT = [
   'Great job! 🎉',
   'Well done! ⭐',
   'Brilliant! 🌟',
@@ -6,19 +8,26 @@ const CORRECT_MESSAGES = [
   'You got it! 🥳',
 ];
 
-const INCORRECT_MESSAGES = [
+const INCORRECT = [
   'Good try! Have another go. 💪',
   'Nearly there! Try again. 😊',
-  'Don\'t worry! Give it another go. 🌈',
+  "Don't worry! Give it another go. 🌈",
 ];
 
-export default function FeedbackMessage({ isCorrect }) {
-  const messages = isCorrect ? CORRECT_MESSAGES : INCORRECT_MESSAGES;
-  const message = messages[Math.floor(Math.random() * messages.length)];
+function pick(pool) {
+  return pool[Math.floor(Math.random() * pool.length)];
+}
+
+export default function FeedbackMessage({ correct }) {
+  const [msg] = useState(() => pick(correct ? CORRECT : INCORRECT));
 
   return (
-    <div className={`feedback-message ${isCorrect ? 'feedback-correct' : 'feedback-incorrect'}`}>
-      {message}
+    <div
+      className={`feedback-msg ${correct ? 'feedback-msg--correct' : 'feedback-msg--wrong'}`}
+      role="status"
+      aria-live="polite"
+    >
+      {msg}
     </div>
   );
 }
