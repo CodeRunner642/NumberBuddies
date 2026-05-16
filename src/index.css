@@ -5,14 +5,14 @@
 }
 
 :root {
-  font-family: 'Nunito', 'Segoe UI', system-ui, sans-serif;
+  font-family: 'Fredoka', system-ui, sans-serif;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: #fff9f0;
+  background: #faf9f5;
   min-height: 100dvh;
 }
 
