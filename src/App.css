@@ -353,28 +353,28 @@
   color: var(--wrong-text);
 }
 
-/* ─── Answer grid (2×2) ─── */
+/* ─── Answer grid (5 columns) ─── */
 .answer-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
   width: 100%;
 }
 
 .btn-answer {
   font-family: var(--font);
-  font-size: 2rem;
+  font-size: 1.4rem;
   font-weight: 700;
   background: var(--cream);
   color: var(--text);
   border: 2px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 18px 0;
+  border-radius: var(--radius-sm);
+  padding: 10px 0;
   cursor: pointer;
   touch-action: manipulation;
   transition: transform 0.1s, box-shadow 0.1s, background 0.1s, border-color 0.1s;
-  box-shadow: 0 4px 0 #D4C0AA;
-  min-height: 72px;
+  box-shadow: 0 3px 0 #D4C0AA;
+  min-height: 52px;
 }
 
 .btn-answer:hover:not(:disabled) {
@@ -612,8 +612,8 @@
   .math-op   { width: 50px; height: 50px; font-size: 2rem; }
   .math-eq   { font-size: 2rem; }
 
-  .btn-answer { font-size: 2.2rem; padding: 22px 0; min-height: 84px; }
-  .answer-grid { gap: 14px; }
+  .btn-answer { font-size: 1.6rem; padding: 12px 0; min-height: 60px; }
+  .answer-grid { gap: 10px; }
 
   .btn-primary { height: 56px; font-size: 1.15rem; }
   .btn-large   { height: 66px; font-size: 1.3rem; }
@@ -633,7 +633,7 @@
   .math-tile { width: 92px; height: 92px; font-size: 3rem; }
   .math-op   { width: 58px; height: 58px; font-size: 2.2rem; }
 
-  .btn-answer { font-size: 2.4rem; min-height: 96px; }
+  .btn-answer { font-size: 1.8rem; min-height: 68px; }
 
   .level-card { padding: 22px 24px; }
   .level-card-name { font-size: 1.3rem; }

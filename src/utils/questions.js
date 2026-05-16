@@ -29,27 +29,7 @@ export function generateQuestion(level, lastQuestion = null) {
 }
 
 export function generateAnswerChoices(question, level) {
-  const max = LEVEL_MAX[level] ?? 10;
-  const correct = question.answer;
-  const choices = new Set([correct]);
-
-  let safety = 0;
-  while (choices.size < 4 && safety < 60) {
-    safety++;
-    const delta = Math.floor(Math.random() * 4) + 1;
-    const sign = Math.random() < 0.5 ? 1 : -1;
-    const wrong = correct + delta * sign;
-    if (wrong >= 0 && wrong <= max + 3 && wrong !== correct) {
-      choices.add(wrong);
-    }
-  }
-
-  // Fallback: fill with nearby integers if needed
-  let n = 0;
-  while (choices.size < 4) {
-    if (n !== correct && n >= 0) choices.add(n);
-    n++;
-  }
-
-  return [...choices].sort(() => Math.random() - 0.5);
+  const levelMax = LEVEL_MAX[level] ?? 10;
+  const max = Math.max(9, levelMax);
+  return Array.from({ length: max + 1 }, (_, i) => i);
 }
